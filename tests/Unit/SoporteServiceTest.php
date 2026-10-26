@@ -2,14 +2,14 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
 use App\Services\SoporteService;
+use PHPUnit\Framework\TestCase;
 
 class SoporteServiceTest extends TestCase
 {
     public function test_asigna_prioridad_alta_para_incidentes_criticos_otsi(): void
     {
-        $service = new SoporteService();
+        $service = new SoporteService;
 
         // Probar categoría de red
         $resultadoRed = $service->calcularPrioridad('Redes / Internet');
@@ -23,7 +23,7 @@ class SoporteServiceTest extends TestCase
 
     public function test_asigna_prioridad_media_para_mantenimiento_impresoras(): void
     {
-        $service = new SoporteService();
+        $service = new SoporteService;
 
         $resultado = $service->calcularPrioridad('Impresoras / Hardware');
         $this->assertEquals('MEDIA', $resultado['prioridad']);
